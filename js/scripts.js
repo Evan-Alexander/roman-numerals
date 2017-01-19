@@ -69,8 +69,11 @@ var roman = function(thousandsPlace, hundredsPlace, tensPlace, onesPlace){
   console.log(romani);
   romani = romani.filter(function(roman){
     return roman;
-    console.log(romani);
   });
+  console.log(romani);
+  var result = romani.toString().replace(/,/g, "");
+
+  return result;
 };
 
 
