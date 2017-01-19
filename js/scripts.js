@@ -7,6 +7,8 @@ var D = 500;
 var M = 1000;
 
 var ones = [null, "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+var tens = [null, "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+var hundreds = [null, "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
 
 var validateInput = function(numVar) {
   if (isNaN(numVar)) {
@@ -34,6 +36,16 @@ var onesIdentifier = function(numbers) {
   return ones[onesPlace];
 }
 
+var tensIdentifier = function(numbers) {
+  var tensPlace = numbers[numbers.length - 2];
+  return tens[tensPlace];
+}
+
+var hundredsIdentifier = function(numbers) {
+  var hundredsPlace = numbers[numbers.length - 3];
+  return hundreds[hundredsPlace];
+}
+
 
 
 
@@ -56,7 +68,9 @@ $(document).ready(function() {
     console.log("verified number is " + verified);
     var numbers = numberSplitter(verified);
     var onesPlace = onesIdentifier(numbers);
-    console.log(onesPlace);
+    var tensPlace = tensIdentifier(numbers);
+    var hundredsPlace = hundredsIdentifier(numbers);
+    console.log(hundredsPlace + tensPlace + onesPlace);
 //    console.log(numbers);
 //    var result = roman(number);
     $(".number").text(number);
