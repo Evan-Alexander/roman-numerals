@@ -8,12 +8,12 @@ var M = 1000;
 
 
 $(document).ready(function() {
-  $("form#pig-latin").submit(function(event) {
+  $("form#r-numerals").submit(function(event) {
     event.preventDefault();
-    var word = $("input#word").val();
-    var result = latin(word);
-    $(".word").text(word);
-    $(".latin").text(result);
+    var number = parseInt($("input#number").val());
+    var result = roman(number);
+    $(".number").text(number);
+    $(".roman").text(result);
 
     $("#result").show();
 
